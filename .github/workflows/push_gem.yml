@@ -17,8 +17,8 @@ jobs:
   push_gem:
     runs-on: ubuntu-latest
     permissions:
-      packages: write | read
-      contents: read | write
+      packages: write
+      contents: read
     steps:
       - name: Set Credentials
         run: | #gotten from https://michaelheap.com/rubygem-github-package-registry/
