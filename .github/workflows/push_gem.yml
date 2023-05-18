@@ -17,8 +17,8 @@ jobs:
   push_gem:
     runs-on: ubuntu-latest
     permissions:
-      packages: write
-      contents: read
+      packages: write | read
+      contents: read | write
     steps:
       - name: Set Credentials
         run: | #gotten from https://michaelheap.com/rubygem-github-package-registry/
@@ -31,6 +31,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: push gem
         run: 
-        | #extra .gem files might be an issue, or irrelevant. Remove if possible. If cannot remove, specify gem to be built instead of *.gem
+        | 
           gem build *.gemspec
           gem push --KEY github --host https://rubygems.pkg.github.com/applyboard omniauth-oktaoauth-0.1.6.gem
