@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  platform_ruby_lib_pipeline:
+    build:
+      context: ../.
+      dockerfile: Dockerfile
+      args:
+        BASE_IMAGE: ${BASE_IMAGE}
+    volumes:
+      - ./doc:/workdir/doc
+
+    container_name: platform_ruby_lib_pipeline
+    tty: true
