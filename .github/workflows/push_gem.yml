@@ -16,9 +16,7 @@ on:
 jobs:
   push_gem:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
+    permissions: read-all|write-all
     steps:
       - uses: actions/checkout@v3
         with: 
