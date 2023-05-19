@@ -20,15 +20,15 @@ jobs:
       packages: write
       contents: read
     steps:
+      - uses: actions/checkout@v3
+        with: 
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Set Credentials
         run: | #gotten from https://michaelheap.com/rubygem-github-package-registry/
           mkdir -p $HOME/.gem
           touch $HOME/.gem/credentials
           chmod 0600 $HOME/.gem/credentials
           printf -- "---\n:github: Bearer ${{ secrets.GITHUB_TOKEN }}\n" > $HOME/.gem/credentials
-      - uses: actions/checkout@v3
-        with: 
-          token: ${{ secrets.GITHUB_TOKEN }}
       - name: push gem
         run: 
         | 
