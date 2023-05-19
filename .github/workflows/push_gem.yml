@@ -33,4 +33,4 @@ jobs:
         run: 
         | 
           gem build *.gemspec
-          gem push --KEY "---\n:github: Bearer ${{ secrets.GITHUB_TOKEN }}\n" --host https://rubygems.pkg.github.com/applyboard omniauth-oktaoauth-0.1.6.gem
+          gem push --KEY ${{ secrets.GITHUB_TOKEN }} --host https://rubygems.pkg.github.com/applyboard omniauth-oktaoauth-0.1.6.gem
