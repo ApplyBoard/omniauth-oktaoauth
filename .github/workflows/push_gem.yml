@@ -11,7 +11,7 @@ on:
   
 jobs:
   ruby_lib_ci:
-    uses: ApplyBoard/platform_common_github-action/.github/workflows/ruby_lib_publish_ci.yml@v0.0.3
+    uses: ApplyBoard/platform_common_github-action/.github/workflows/ruby_lib_publish_rc.yml@v0.0.3
     with:
       gem_name: omniauth-oktaoauth
       test_on_ruby_3: false
